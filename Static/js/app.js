@@ -70,7 +70,7 @@ function updateFilters() {
       let filter = d3.select("#" + filterId[i]).property('value');
       if (filter)
       {
-        filteredData.filter(row => row.filterId[i] === filter)
+        filteredData.filter(row => row === filter)
       }
     }
   
