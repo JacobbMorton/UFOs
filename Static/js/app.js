@@ -66,11 +66,26 @@ function updateFilters() {
     for (i = 0; i < Object.keys(filters).length; i++)
     {
       let filterId = Object.keys(filters);
-      console.log(filterId[i]);
-      let filter = d3.select("#" + filterId[i]).property('value');
-      if (filter)
+      let filter = d3.select('#' + filterId[i]).property("value");
+      if (filterId[i] == "datetime")
       {
-        filteredData.filter(row => row === filter)
+        filteredData = filteredData.filter(row => row.datetime === filter)
+      }
+      if (filterId[i] == "city") 
+      {
+        filteredData = filteredData.filter(row => row.city === filter)
+      }
+      if (filterId[i] == "state")
+      {
+        filteredData = filteredData.filter(row => row.state === filter)
+      }
+      if (filterId[i] == "country")
+      {
+        filteredData = filteredData.filter(row => row.country === filter)
+      }
+      if (filterId[i] == "shape")
+      {
+        filteredData = filteredData.filter(row => row.shape === filter)
       }
     }
   
